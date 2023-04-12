@@ -1,0 +1,24 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h1>如果下面没有文字，那么是很好的</h1>
+<h1 id="t1"></h1>
+<h1 id="t2"></h1>
+<script>
+document.addEventListener("visibilitychange", function () {
+  if (!document.hidden) {  
+    // 处于当前页面
+    document.getElementById('t1').innerHTML = "页面切入,浏览器处于当前页面"
+    console.log("页面切入,浏览器处于当前页面")
+  }else{
+  	// 页面切出,不处于当前页面
+  	document.getElementById('t1').innerHTML = "页面切出,浏览器不处于当前页面"
+  	console.log("页面切出,浏览器不处于当前页面")
+  }
+})
+
+window.onblur = ()=>{
+document.getElementById('t2').innerHTML = "失去焦点"
+}
+window.onfocus = ()=>{
+document.getElementById('t2').innerHTML = "获得焦点"
+}
+</script>
